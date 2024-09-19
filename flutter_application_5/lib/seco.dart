@@ -30,8 +30,8 @@ class _MyAppState extends State<seco> {
             ),
             Row(
               children: [
-                Text("   "),
-                status ? Icon(Icons.star) : Icon(Icons.star_border)
+                const Text("   "),
+                status ? const Icon(Icons.star) : const Icon(Icons.star_border)
               ],
             ),
             Row(

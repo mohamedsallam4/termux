@@ -11,16 +11,19 @@ class ecommerce extends StatefulWidget {
 
 // ignore: camel_case_types
 class _ecommerceState extends State<ecommerce> {
-  int index = 0;
+  int stander = 0;
 
   List categories = [
-    {"iconname": Icons.laptop, "title": "Laptop"},
-    {"iconname": Icons.phone_android_rounded, "title": "Mobile"},
-    {"iconname": Icons.tv, "title": "Screen"},
-    {"iconname": Icons.watch, "title": "Watch"},
-    {"iconname": Icons.tablet_android_outlined, "title": "Tablet"},
-    {"iconname": Icons.computer_sharp, "title": "Computer"},
-    {"iconname": Icons.speaker, "title": "Speaker"},
+    {"icon": Icons.laptop, "lable": "Laptop"},
+    {"icon": Icons.computer_sharp, "lable": "Computer"},
+    {"icon": Icons.watch_rounded, "lable": "Watch"},
+    {"icon": Icons.phone_android_rounded, "lable": "Mobile"},
+    {"icon": Icons.tv, "lable": "TV"},
+    {"icon": Icons.speaker, "lable": "Speaker"},
+    {"icon": Icons.headphones, "lable": "Head Phone"},
+    {"icon": Icons.tablet_mac, "lable": "Tablet"},
+    {"icon": Icons.keyboard_alt_outlined, "lable": "Keyboard"},
+    {"icon": Icons.mouse_outlined, "lable": "Mouse"}
   ];
   List bestselling = [
     {
@@ -79,10 +82,10 @@ class _ecommerceState extends State<ecommerce> {
           iconSize: 40,
           onTap: (value) {
             setState(() {
-              index = value;
+              stander = value;
             });
           },
-          currentIndex: index,
+          currentIndex: stander,
           selectedItemColor: Colors.orange,
           items: const [
             BottomNavigationBarItem(
@@ -150,11 +153,11 @@ class _ecommerceState extends State<ecommerce> {
                               borderRadius: BorderRadius.circular(100)),
                           padding: const EdgeInsets.all(15),
                           child: Icon(
-                            categories[index]["iconname"],
+                            categories[index]["icon"],
                             size: 40,
                           )),
                       Text(
-                        categories[index]["title"],
+                        categories[index]["lable"],
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.grey[800]),
@@ -217,7 +220,7 @@ class _ecommerceState extends State<ecommerce> {
                         ),
                         Text(
                           bestselling[index]["price"],
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 14,
                               color: Colors.orange,
                               fontWeight: FontWeight.bold),

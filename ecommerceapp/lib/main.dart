@@ -1,4 +1,8 @@
-import 'package:ecommerceapp/Ecommerceapp1.dart';
+import 'package:ecommerceapp/initHomepage.dart';
+import 'package:ecommerceapp/initPageone.dart';
+import 'package:ecommerceapp/initPagetwo.dart';
+import 'package:ecommerceapp/popupmenuebottom.dart';
+import 'package:ecommerceapp/searchDelegate.dart';
 
 import 'package:flutter/material.dart';
 
@@ -16,9 +20,14 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ecommerce(),
+      home: const searchdelegate(),
+      routes: {
+        "Homepage": (context) => const homepage(),
+        "Pageone": (context) => const Pageone(),
+        "Pagetwo": (context) => const Pagetwo()
+      },
     );
   }
 }

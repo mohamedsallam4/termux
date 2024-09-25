@@ -1,0 +1,124 @@
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          backgroundColor: Colors.green,
+          appBar: AppBar(
+            title: const Text("mohamed sallam apps "),
+            leading: const Icon(
+              Icons.home,
+              color: Colors.white,
+              size: 40,
+            ),
+            leadingWidth: 60,
+            backgroundColor: Colors.black,
+            foregroundColor: const Color.fromARGB(255, 242, 229, 115),
+            actions: const [
+              Icon(
+                Icons.school,
+                size: 30,
+                color: Color.fromARGB(255, 231, 209, 177),
+              ),
+              Icon(
+                Icons.share,
+                color: Colors.white,
+                size: 30,
+              )
+            ],
+          ),
+          body: Container(
+            //height: 400,
+            //width: 600,
+            color: Color.fromARGB(255, 241, 238, 146),
+            alignment: Alignment.topCenter,
+            child: const Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //        ElevatedButton(
+                    //   onPressed: null, child: Text("click on button"))
+                    Text("             "),
+                    Text("FaceBook",
+                        style: TextStyle(
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600)),
+                    // Text("helllo moooo ")
+                    TextButton(
+                        onPressed: null,
+                        child: Icon(
+                          Icons.facebook,
+                          color: Color.fromARGB(255, 2, 101, 182),
+                          size: 40,
+                        ))
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("              "),
+                    Text("Telegram ",
+                        style: TextStyle(
+                            letterSpacing: 2,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600)),
+                    TextButton(
+                        onPressed: null,
+                        child: Icon(
+                          Icons.telegram,
+                          color: Colors.lightBlue,
+                          size: 40,
+                        ))
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("        "),
+                    Text(
+                      "   Tiktok     ",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20,
+                          letterSpacing: 2),
+                    ),
+                    TextButton(
+                        onPressed: null,
+                        child: Icon(
+                          Icons.tiktok,
+                          color: Colors.black,
+                          size: 40,
+                        ))
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("               "),
+                    Text("Radio     ",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 2)),
+                    TextButton(
+                        onPressed: null,
+                        child: Icon(
+                          Icons.radio_button_checked,
+                          color: Colors.red,
+                          size: 40,
+                        ))
+                  ],
+                ),
+                
+              ],
+            ),
+          )),
+    );
+  }
+}

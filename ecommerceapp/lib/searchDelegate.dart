@@ -16,13 +16,22 @@ class _searchdelegateState extends State<searchdelegate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("search delegate "),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: const Text(
+          "Search Delegate () ",
+          style: TextStyle(color: Colors.black),
+        ),
+        centerTitle: true,
         actions: [
           IconButton(
-              onPressed: () {
-                showSearch(context: context, delegate: customsearch());
-              },
-              icon: Icon(Icons.search))
+            iconSize: 30,
+            color: Colors.black,
+            onPressed: () {
+              showSearch(context: context, delegate: customsearch());
+            },
+            icon: const Icon(Icons.search),
+          )
         ],
       ),
       body: ListView(children: []),
@@ -30,15 +39,35 @@ class _searchdelegateState extends State<searchdelegate> {
   }
 }
 
+// ignore: camel_case_types
 class customsearch extends SearchDelegate {
   List username = [
-    "mohamed ",
-    "ezzat ",
-    "hamza ",
-    "ahmed ",
-    "aser ",
-    "mahmoud ",
-    "loai "
+    "mohamed",
+    "osama",
+    "amr",
+    "amir",
+    "bassem",
+    "basel",
+    "hozaifa",
+    "ramy",
+    "aser",
+    "ahmed",
+    "mona",
+    "omar",
+    "mona",
+    "salma",
+    "roaa",
+    "yara",
+    "nada",
+    "tala",
+    "menna",
+    "yara",
+    "samah",
+    "ibrahem",
+    "sara",
+    "rana",
+    "rewan",
+    "razan"
   ];
   List? filterlist;
   @override
@@ -48,7 +77,7 @@ class customsearch extends SearchDelegate {
           onPressed: () {
             query = "";
           },
-          icon: Icon(Icons.close))
+          icon: const Icon(Icons.close))
     ];
   }
 
@@ -58,7 +87,7 @@ class customsearch extends SearchDelegate {
         onPressed: () {
           close(context, null);
         },
-        icon: Icon(Icons.arrow_back));
+        icon: const Icon(Icons.arrow_back));
   }
 
   @override
@@ -79,7 +108,7 @@ class customsearch extends SearchDelegate {
                 padding: const EdgeInsets.all(18.0),
                 child: Text(
                   "${username[index]}",
-                  style: TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 16),
                 ),
               ),
             ),
@@ -99,7 +128,7 @@ class customsearch extends SearchDelegate {
                 padding: const EdgeInsets.all(18.0),
                 child: Text(
                   "${filterlist![index]}",
-                  style: TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 16),
                 ),
               ),
             ),

@@ -20,6 +20,14 @@ class _testState extends State<test> {
   }
 
   @override
+  void dispose() {
+    scrollcontroller
+        .dispose(); //to be less stress and more flexable on the mobile
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -44,6 +52,12 @@ class _testState extends State<test> {
       body: ListView(
         controller: scrollcontroller,
         children: [
+          MaterialButton(
+              onPressed: () {
+                scrollcontroller.animateTo(9636,
+                    duration: Duration(seconds: 10), curve: Curves.ease);
+              },
+              child: Text("JUMP TO BOTTOM ")),
           ...List.generate(
               100,
               (index) => Container(
@@ -54,7 +68,14 @@ class _testState extends State<test> {
                       : const Color.fromARGB(255, 144, 218, 255),
                   child: Text("$index",
                       style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 25))))
+                          fontWeight: FontWeight.bold, fontSize: 25)))),
+          MaterialButton(
+              onPressed: () {
+                // scrollcontroller.jumpTo(0); the second way
+                scrollcontroller.animateTo(0,
+                    duration: Duration(seconds: 10), curve: Curves.ease);
+              },
+              child: Text("JUMP TO TOP ")),
         ],
       ),
     );

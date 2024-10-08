@@ -1,4 +1,4 @@
-import 'package:ecommerceapp/product.dart';
+import 'package:ecommerceapp/productEcommerce.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
